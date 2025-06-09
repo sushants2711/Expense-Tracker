@@ -55,7 +55,9 @@ export const signupController = async (req, res) => {
         // return a response to the user created successfully
         return res.status(201).json({
             success: true,
-            message: "user created successfully"
+            message: "user created successfully",
+            name: name,
+            email: email
         });
 
     } catch (error) {

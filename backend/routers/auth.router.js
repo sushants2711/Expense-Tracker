@@ -8,6 +8,6 @@ const authRoute = express.Router();
 authRoute.route("/signup").post(signupMiddleware, signupController);
 authRoute.route("/login").post(loginMiddleware, loginController);
 authRoute.route("/logout").post(verifyCookieForEnsureAuth, logoutController);
-authRoute.route("/account/delete").post(verifyCookieForEnsureAuth, deleteMiddleware, deleteController);
+authRoute.route("/account/delete").delete(verifyCookieForEnsureAuth, deleteMiddleware, deleteController);
 
 export default authRoute;

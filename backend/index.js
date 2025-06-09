@@ -28,14 +28,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // connect to the frontend url so frontend, backend and database communicates well
-// app.use(cors({
-//     origin: "http://localhost:5173",
-//     credentials: true,
-//     methods: "GET,POST,PUT,DELETE",
-//     allowedHeaders: ["Content-Type", "Authorization"]
-// }));
+app.use(cors({
+    origin: "http://localhost:5173",
+    credentials: true,
+    methods: "GET,POST,PUT,DELETE",
+    allowedHeaders: ["Content-Type", "Authorization"]
+}));
 
-app.use(cors());
 
 // api endpoints start here 
 app.use("/api/auth", authRoute);

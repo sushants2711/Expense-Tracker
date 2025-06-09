@@ -1,4 +1,5 @@
 import expenseModel from "../models/expense.model.js";
+import mongoose from "mongoose";
 
 export const createExpenseController = async (req, res) => {
     try {
@@ -12,6 +13,15 @@ export const createExpenseController = async (req, res) => {
                 message: "Unauthorized- user"
             });
         };
+
+
+        if (!mongoose.Types.ObjectId.isValid(loggedInUser)) {
+            return res.status(400).json({
+                success: false,
+                message: "Invalid ID format",
+            });
+        }
+
 
         const newExpense = new expenseModel({
             title,
@@ -47,6 +57,15 @@ export const allExpenseController = async (req, res) => {
                 message: "Unauthorized - user"
             });
         };
+
+
+        if (!mongoose.Types.ObjectId.isValid(loggedInUser)) {
+            return res.status(400).json({
+                success: false,
+                message: "Invalid ID format",
+            });
+        }
+
 
         const expenseExist = await expenseModel.find({ user: loggedInUser });
 
@@ -98,7 +117,7 @@ export const updateExpenseController = async (req, res) => {
         if (!title && !amount && !category) {
             return res.status(400).json({
                 success: false,
-                message: "At least update one field"
+                message: "At least update one field is required"
             });
         };
 
@@ -109,6 +128,15 @@ export const updateExpenseController = async (req, res) => {
             });
         };
 
+
+        if (!mongoose.Types.ObjectId.isValid(id)) {
+            return res.status(400).json({
+                success: false,
+                message: "Invalid ID format",
+            });
+        }
+
+
         const loggedInUser = req.user._id;
 
         if (!loggedInUser) {
@@ -117,6 +145,15 @@ export const updateExpenseController = async (req, res) => {
                 message: "Unauthorized - user"
             });
         };
+
+
+        if (!mongoose.Types.ObjectId.isValid(loggedInUser)) {
+            return res.status(400).json({
+                success: false,
+                message: "Invalid ID format",
+            });
+        }
+
 
         const expenseExist = await expenseModel.findById(id);
 
@@ -134,11 +171,17 @@ export const updateExpenseController = async (req, res) => {
             });
         };
 
+        const updateData = {
+            title: title || expenseExist.title,
+            amount: amount || expenseExist.amount,
+            category: category || expenseExist.category
+        };
+
         const updateExpense = await expenseModel.findByIdAndUpdate(
             id,
-            { title, amount, category },
+            updateData,
             { new: true }
-        )
+        );
 
         return res.status(201).json({
             success: true,
@@ -167,6 +210,13 @@ export const deleteExpenseController = async (req, res) => {
             });
         };
 
+        if (!mongoose.Types.ObjectId.isValid(id)) {
+            return res.status(400).json({
+                success: false,
+                message: "Invalid ID format",
+            });
+        }
+
         const loggedInUser = req.user._id;
 
         if (!loggedInUser) {
@@ -174,6 +224,13 @@ export const deleteExpenseController = async (req, res) => {
                 success: false,
             });
         };
+
+        if (!mongoose.Types.ObjectId.isValid(loggedInUser)) {
+            return res.status(400).json({
+                success: false,
+                message: "Invalid ID format",
+            });
+        }
 
         const expenseExist = await expenseModel.findById(id);
 
@@ -219,6 +276,13 @@ export const searchYourExpenseController = async (req, res) => {
             });
         };
 
+        if (!mongoose.Types.ObjectId.isValid(loggedInUser)) {
+            return res.status(400).json({
+                success: false,
+                message: "Invalid ID format",
+            });
+        }
+
         const { query } = req.query;
 
         if (!query) {
@@ -233,8 +297,7 @@ export const searchYourExpenseController = async (req, res) => {
             $or: [
                 { title: { $regex: query, $options: "i" } },
                 { category: { $regex: query, $options: "i" } },
-                !isNaN(query) ? { amount: Number(query) } : null
-            ].filter(Boolean)
+            ]
         });
 
         return res.status(200).json({
@@ -263,12 +326,19 @@ export const filterYourExpenseInAscendingOrderByTitle = async (req, res) => {
             });
         };
 
+        if (!mongoose.Types.ObjectId.isValid(loggedInUser)) {
+            return res.status(400).json({
+                success: false,
+                message: "Invalid ID format",
+            });
+        }
+
         const filterItem = await expenseModel.find({ user: loggedInUser });
 
         if (!filterItem) {
             return res.status(400).json({
                 success: false,
-                message: "Not find any datar"
+                message: "Not find any data"
             });
         };
 
@@ -306,6 +376,13 @@ export const filterYourExpenseInAscendingOrderByCategory = async (req, res) => {
                 message: "Unauthorized - user"
             });
         };
+
+        if (!mongoose.Types.ObjectId.isValid(loggedInUser)) {
+            return res.status(400).json({
+                success: false,
+                message: "Invalid ID format",
+            });
+        }
 
         const filterItem = await expenseModel.find({ user: loggedInUser });
 
@@ -351,6 +428,13 @@ export const filterYourExpenseInAscendingOrderByAmount = async (req, res) => {
             });
         };
 
+        if (!mongoose.Types.ObjectId.isValid(loggedInUser)) {
+            return res.status(400).json({
+                success: false,
+                message: "Invalid ID format",
+            });
+        }
+
         const filterItem = await expenseModel.find({ user: loggedInUser });
 
         if (!filterItem) {
@@ -392,6 +476,13 @@ export const filterYourExpenseInDescendingOrderByAmount = async (req, res) => {
             return res.status(400).json({
                 success: false,
                 message: "Unauthorized - user"
+            });
+        };
+
+        if (!mongoose.Types.ObjectId.isValid(loggedInUser)) {
+            return res.status(400).json({
+                success: false,
+                message: "Invalid ID format",
             });
         };
 

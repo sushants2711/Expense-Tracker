@@ -4,8 +4,8 @@ import joi from "joi";
 export const createMiddleware = async (req, res, next) => {
     try {
         const schema = joi.object({
-            title: joi.string().min(3).max(100).required(),
-            category: joi.string().min(3).max(100).required(),
+            title: joi.string().min(3).max(100).required().pattern(/[a-zA-Z]/),
+            category: joi.string().min(3).max(100).required().pattern(/[a-zA-Z]/),
             amount: joi.number().min(-10000000).max(10000000).invalid(0).required()
         });
 
@@ -14,7 +14,7 @@ export const createMiddleware = async (req, res, next) => {
         if (error) {
             return res.status(400).json({
                 success: false,
-                message: "validation failed || incorrect data",
+                message: "validation failed by middleware",
                 error: error.details[0].message
             });
         };
@@ -35,9 +35,9 @@ export const createMiddleware = async (req, res, next) => {
 export const updateMiddleware = async (req, res, next) => {
     try {
         const schema = joi.object({
-            title: joi.string().min(3).max(100),
-            category: joi.string().min(3).max(100),
-            amount: joi.number().min(-10000000).max(10000000).invalid(0)
+            title: joi.string().min(3).max(100).optional().empty('').pattern(/[a-zA-Z]/),
+            category: joi.string().min(3).max(100).optional().empty('').pattern(/[a-zA-Z]/),
+            amount: joi.number().min(-10000000).max(10000000).invalid(0).optional().empty('')
         });
 
         const { error } = schema.validate(req.body);
@@ -45,7 +45,7 @@ export const updateMiddleware = async (req, res, next) => {
         if (error) {
             return res.status(400).json({
                 success: false,
-                message: "At least update one field",
+                message: "At least update one field is required || only numbers is not allowed",
                 error: error.details[0].message
             });
         };
