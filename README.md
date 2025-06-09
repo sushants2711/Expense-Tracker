@@ -25,7 +25,7 @@ An intuitive web-based Expense Tracker that allows users to manage their income 
 ### Sort Page By Title
 ![Sort](./screenshots/Sort1.png)
 
-** ANd many Other Pages like Create Page, Logout, Edit-expense and delete-user page **
+** And many Other Pages like Create Page, Logout, Edit-expense and delete-user page **
 ---
 
 ## 🛠 Features
