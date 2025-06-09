@@ -13,13 +13,19 @@ An intuitive web-based Expense Tracker that allows users to manage their income 
 ### Homepage
 ![Homepage](./screenshots/Home.png)
 
-### Add Expense
-![Add Expense](./screenshots/add-expense.png)
+### Index Page
+![Index Page](./screenshots/index.png)
 
-### View Expenses
-![View Expenses](./screenshots/view-expense.png)
+### Login Page
+![Login](./screenshots/Login.png)
 
+### Search Page
+![Search](./screenshots/SearchPage.png)
 
+### Sort Page By Title
+![Sort](./screenshots/Sort1.png)
+
+** ANd many Other Pages like Create Page, Logout, Edit-expense and delete-user page **
 ---
 
 ## 🛠 Features
