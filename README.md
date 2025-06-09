@@ -4,7 +4,7 @@ An intuitive web-based Expense Tracker that allows users to manage their income 
 
 ## 🔗 Live Demo
 
-🚀 [Live Website](#) *(Add the deployed link here once hosted)*
+🚀 [Live Website](https://expense-tracker-frontend-45xu.onrender.com/) *(Now it is Live)*
 
 ---
 
