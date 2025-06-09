@@ -29,7 +29,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // connect to the frontend url so frontend, backend and database communicates well
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: "https://expense-tracker-frontend-45xu.onrender.com",
     credentials: true,
     methods: "GET,POST,PUT,DELETE",
     allowedHeaders: ["Content-Type", "Authorization"]
