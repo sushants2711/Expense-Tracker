@@ -11,7 +11,7 @@ An intuitive web-based Expense Tracker that allows users to manage their income 
 ## 📸 Screenshots
 
 ### Homepage
-![Homepage](./screenshots/homepage.png)
+![Homepage](./screenshots/Home.png)
 
 ### Add Expense
 ![Add Expense](./screenshots/add-expense.png)
