@@ -1,6 +1,6 @@
 export const handleSignupApi = async (data) => {
     try {
-        const url = "http://localhost:1200/api/auth/signup";
+        const url = "https://expense-tracker-backend-np3s.onrender.com/api/auth/signup";
         const response = await fetch(url, {
             method: "POST",
             headers: {

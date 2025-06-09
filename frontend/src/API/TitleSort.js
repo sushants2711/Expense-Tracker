@@ -1,6 +1,6 @@
 export const titleSortAsc = async () => {
     try {
-        const url = 'http://localhost:1200/api/expense/filter/title';
+        const url = 'https://expense-tracker-backend-np3s.onrender.com/api/expense/filter/title';
         const response = await fetch(url, {
             method: 'GET',
             credentials: 'include',

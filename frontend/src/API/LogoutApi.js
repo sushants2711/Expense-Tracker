@@ -1,6 +1,6 @@
 export const handleLogoutApi = async () => {
     try {
-        const url = `http://localhost:1200/api/auth/logout`;
+        const url = `https://expense-tracker-backend-np3s.onrender.com/api/auth/logout`;
         const response = await fetch (url, {
             method: "POST",
             credentials: "include"

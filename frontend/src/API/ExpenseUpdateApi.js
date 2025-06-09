@@ -1,6 +1,6 @@
 export const handleCreateApiForUpdate = async (id, data) => {
     try {
-        const url = `http://localhost:1200/api/expense/update/${id}`;
+        const url = `https://expense-tracker-backend-np3s.onrender.com/api/expense/update/${id}`;
         const response = await fetch(url, {
             method: "PUT",
             headers: {

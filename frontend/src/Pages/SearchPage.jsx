@@ -1,9 +1,13 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { SearchContextApi } from '../context_api/SearchContextApi';
 import { Link } from 'react-router-dom';
 
 export const SearchPage = () => {
     const { searchData } = useContext(SearchContextApi);
+
+    useEffect(()=> {
+        document.title = "Search-Page";
+    }, []);
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-white to-blue-50 p-6">

@@ -13,7 +13,7 @@ export const FetchContextProvider = ({ children }) => {
 
     const fetchAlways = async () => {
         try {
-            const url = `http://localhost:1200/api/expense/fetch-all`;
+            const url = `https://expense-tracker-backend-np3s.onrender.com/api/expense/fetch-all`;
 
             const response = await fetch(url, {
                 method: "GET",

@@ -1,7 +1,7 @@
 export const handleLoginpApi = async (data) => {
 
     try {
-        const url = `http://localhost:1200/api/auth/login`;
+        const url = `https://expense-tracker-backend-np3s.onrender.com/api/auth/login`;
         const response = await fetch(url, {
             method: "POST",
             headers: {

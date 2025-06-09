@@ -1,6 +1,6 @@
 export const handleDeleteProductApi = async (id) => {
     try {
-        const url = `http://localhost:1200/api/expense/delete/${id}`;
+        const url = `https://expense-tracker-backend-np3s.onrender.com/api/expense/delete/${id}`;
         const response = await fetch(url, {
             method: "DELETE",
             credentials: "include"

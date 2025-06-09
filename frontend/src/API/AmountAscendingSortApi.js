@@ -1,6 +1,6 @@
 export const ascendingSort = async () => {
     try {
-        const url = 'http://localhost:1200/api/expense/filter/amount/asc';
+        const url = 'https://expense-tracker-backend-np3s.onrender.com/api/expense/filter/amount/asc';
         const response = await fetch(url, {
             method: 'GET',
             credentials: 'include',

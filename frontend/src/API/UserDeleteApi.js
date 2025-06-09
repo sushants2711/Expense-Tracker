@@ -1,6 +1,6 @@
 export const deleteUserApi = async (body) => {
     try {
-        const url = "http://localhost:1200/api/auth/account/delete";
+        const url = "https://expense-tracker-backend-np3s.onrender.com/api/auth/account/delete";
         const response = await fetch(url, {
             method: "DELETE",
               headers: {

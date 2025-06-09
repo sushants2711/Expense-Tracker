@@ -1,6 +1,6 @@
 export const searchBarAPi = async (data) => {
     try {
-        const url = `http://localhost:1200/api/expense/search?query=${data}`;
+        const url = `https://expense-tracker-backend-np3s.onrender.com/api/expense/search?query=${data}`;
         const response = await fetch(url, {
             method: 'GET',
             credentials: 'include',
