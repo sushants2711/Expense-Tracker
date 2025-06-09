@@ -32,7 +32,7 @@ function App() {
       {showNavbar && <Navbar />}
       <Routes>
 
-        {/* Public Routes */}
+       {/* Public Routes */}
         <Route path="/" element={<PublicRoute><LogoPage /></PublicRoute>} />
         <Route path="/signup" element={<PublicRoute><Signup /></PublicRoute>} />
         <Route path="/login" element={<PublicRoute><Login /></PublicRoute>} />
