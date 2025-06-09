@@ -19,7 +19,6 @@ An intuitive web-based Expense Tracker that allows users to manage their income 
 ### View Expenses
 ![View Expenses](./screenshots/view-expense.png)
 
-> 💡 *Add your screenshot images in a folder named `screenshots` in your repo and make sure they are committed.*
 
 ---
 
