@@ -2,6 +2,8 @@
 
 An intuitive web-based Expense Tracker that allows users to manage their income and expenses effectively. Built using **React.js**, **Node.js**, **Express.js**, and **MongoDB**, this full-stack application supports authentication, user-specific operations, and a clean UI with **Tailwind CSS**.
 
+---
+
 ## 🔗 Live Demo
 
 🚀 [Live Website](https://expense-tracker-frontend-45xu.onrender.com/) *(Now it is Live)*
@@ -86,4 +88,12 @@ Expense-Tracker/
 │       └── routes/            # Route definitions
 │
 └── README.md
+
+---
+
+## Contact
+
+For bugs or feature request, please reach out to sushants2711@gmail.com
+
+[Linkedin](https://www.linkedin.com/in/sushant-kumar-singh-414782230)
 
