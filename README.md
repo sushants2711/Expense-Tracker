@@ -4,9 +4,16 @@ An intuitive web-based Expense Tracker that allows users to manage their income 
 
 ---
 
-## 🔗 Live Demo
+🔗 **Live Demo:**
+[Expense Tracker](https://expense-tracker-frontend-45xu.onrender.com/)
 
-🚀 [Live Website](https://expense-tracker-frontend-45xu.onrender.com/) *(Now it is Live)*
+---
+
+## Login (Demo Credentials)
+
+> **Guest**
+> Username: `sushants2711@gmail.com`
+> Password: `oppooppo`
 
 ---
 
@@ -27,7 +34,6 @@ An intuitive web-based Expense Tracker that allows users to manage their income 
 ### Sort Page By Title
 ![Sort](./screenshots/Sort1.png)
 
-** And many Other Pages like Create Page, Logout, Edit-expense and delete-user page **
 ---
 
 ## 🛠 Features
@@ -42,6 +48,21 @@ An intuitive web-based Expense Tracker that allows users to manage their income 
 - 🍪 Uses localStorage and cookies for session handling
 
 ---
+
+## 🛠️ Tech Stack
+
+### **Frontend**
+- ⚛️ React.js  
+- 💅 Bootstrap  
+- 🌐 HTML / CSS  / Tailwind Css
+
+### **Backend**
+- 🧩 Node.js  
+- 🚀 Express.js  
+
+### **Database**
+- 🍃 MongoDB  
+
 
 ## 🚀 Getting Started
 
@@ -60,14 +81,14 @@ MONGO_URL=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret_key
 NODE_ENV=development
 
-cd ../frontend
+cd frontend
 npm install
+npm run dev
 
 cd backend
-npm start
+npm install
+npm run dev
 
-cd ../frontend
-npm start
 
 Expense-Tracker/
 ├── backend/                   # Node.js + Express Backend
@@ -90,6 +111,48 @@ Expense-Tracker/
 └── README.md
 
 ```
+
+## 🧩 Backend API Endpoints
+
+1. GET /api/v1/exense/all - Fetch all the expense that are available
+
+```
+{
+  "success": true,
+  "message": "Data fetch successfully",
+  "data": [
+    {
+      "_id": "64f1e2a2b12c3d4567890abc",
+      "credit": 400
+    },
+    {
+      "_id": "56f1e2a2b12c3d4567890abc",
+      "debit": 200
+    }
+  ],
+  "balance": 200
+  "Total Income": 400,
+  "Total Expense": 200
+}
+
+```
+
+2. POST /api/v1/expense/add - Add a new Expense
+
+```
+{
+    "success": true,
+    "message": "Data Added Successfully",
+    "data": [
+    {
+      "_id": "64f1e2a2b12c3d4567890abc",
+      "credit": 1000
+    }
+ ]
+
+}
+```
+
 
 ---
 
