@@ -92,8 +92,8 @@ Expense-Tracker/
 ---
 
 ## Contact
-
 For bugs or feature request, please reach out to sushants2711@gmail.com
 
 [Linkedin](https://www.linkedin.com/in/sushant-kumar-singh-414782230)
+
 
